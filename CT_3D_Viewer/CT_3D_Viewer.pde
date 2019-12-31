@@ -6,6 +6,8 @@ String mainPath = "C:/Users/wegos/Documents/GitHub/CT 3D/MANIX PNG";
 PVector dims;
 PShape render;
 
+float skipLayers = 2;
+
 float layerHeight = 2.5;
 
 float threshold = -14000000;
@@ -25,7 +27,7 @@ void setup(){
   
   scans = new PImage[paths.length];
   
-  for(int i = 0; i < scans.length; i++) {
+  for(int i = 0; i < scans.length; i+=1) {
     scans[i] = loadImage(mainPath+"/"+paths[i]);
     scans[i].loadPixels();
   } 
